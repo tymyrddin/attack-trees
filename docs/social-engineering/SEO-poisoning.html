@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>On steroids: SEO poisoning &mdash; Attack trees</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Introduction" href="../system/README.html" />
+    <link rel="prev" title="On steroids: A botnet" href="Create-botnet.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> Attack trees
+            <img src="../../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Testlab</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../lab/README.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lab/Kali.html">Kali Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lab/Windows.html">Windows PC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lab/macOS.html">macOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lab/Linux.html">Linux PC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lab/Metasploitable.html">Metasploitable2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lab/Webgoat.html">Goat and wolf</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reconnaissance</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../reconnaissance/README.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reconnaissance/Info-company-website.html">Gathering info about a company/website</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reconnaissance/Info-person.html">Gathering info about a person</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reconnaissance/Deep-dive-DNS.html">Gathering DNS information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reconnaissance/Gather-app-information.html">Gathering application information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reconnaissance/Discover-app-vulnerabilities.html">Discovering application vulnerabilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reconnaissance/War-dialing-driving-flying-shipping.html">War-dialing-driving-flying-shipping</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Scanning</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../scanning/README.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scanning/Hosts-icmp.html">Host discovery with ICMP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scanning/Hosts-tcp.html">Host discovery with TCP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scanning/Hosts-udp.html">Host discovery with UDP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scanning/Vulnerabilities.html">Discover vulnerabilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scanning/Service-and-OS-detection.html">Service and OS detection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scanning/Analysis.html">Diving deeper in discovery</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Enumeration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../enumeration/README.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../enumeration/Network-enumeration.html">Network enumeration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../enumeration/Linux-enumeration.html">Linux enumeration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../enumeration/Windows-enumeration.html">Windows enumeration</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Database</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../databases/README.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../databases/Access-password-database.html">Access password database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../databases/Crack-root.html">Cracking the database root password</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../databases/DB-exploits.html">Using known database exploits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../databases/SQLi.html">SQL injection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../databases/Confirm-injection-vuln.html">Confirm SQL injection vulnerability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../databases/SQLi-login.html">SQL injection login bypass</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../databases/SQLi-extract.html">Extracting data from the database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../databases/SQLi-outside.html">Read and write local files outside of www root</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../databases/SQLi-get-shell.html">Get shell and control target server</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../databases/Automated-exploitation.html">Automated exploitation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Application</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../application/README.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../application/Mapping.html">Web application mapping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../application/File-upload.html">Exploit file upload vulnerabilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../application/Remote-code-execution.html">Exploit remote code execution vulnerabilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../application/Local-file-inclusion.html">Shell from local file inclusion vulnerabilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../application/Remote-file-inclusion.html">Shell from remote file inclusion vulnerabilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../application/XSS.html">Cross-site scripting (XSS)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../application/XSS-context.html">Discover XSS vulnerabilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../application/Hook-to-beef.html">Hooking targets to BeEF using XSS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../application/Cookies.html">Become admin by manipulating cookies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../application/Clickjacking.html">Clickjacking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../application/CSRF.html">Cross-Site Request Forgery (CSRF)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../application/Last-resort.html">Last resort: Brute force &amp; Dictionary attacks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../application/MitB.html">Man-in-the-Browser (MitB)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../application/Browser-based-attacks.html">Browser-based attacks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../application/ZAP.html">Zed Attack Proxy (ZAP)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../application/Post-exploitation.html">Post exploitation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Server</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../server/README.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/Spoof-webserver.html">Spoof webserver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/Hijack-application-session.html">Hijack session (application)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/Escalate-reverse-shell.html">Escalate a reverse shell to a more powerful shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/Privilege-escalation-on-web-server.html">Privilege escalation on a web server</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">CI/CD pipeline</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../cicd/README.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cicd/Supply-chain.html">Poison open source supply chains</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Malware</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../malware/README.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../malware/Create-malware.html">Creating malware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../malware/Malware-Windows.html">Windows malware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../malware/Keylogger.html">Keylogger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../malware/Password-recovery.html">Password recovery tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../malware/Modify-source.html">Modifying code to bypass AV</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../malware/Trojan-Windows.html">Simple Windows trojan</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../malware/Malware-macOS.html">macOS malware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../malware/Trojan-macOS.html">Simple macOS trojan</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../malware/Malware-Linux.html">Linux malware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../malware/Trojan-Linux.html">Simple Linux trojan</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../malware/Target-device.html">Run payload on target device</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Social engineering</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="README.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Mail-delivery.html">Mail delivery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Fake-login.html">Steal access info with fake login page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Beef-hook.html">Webpage with BeEF hook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Phishing.html">Phishing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Pharming.html">Pharming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Analytics.html">Use analytics to lure a target</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Fake-prompts.html">Fake prompts everywhere</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Out-of-the-box.html">Getting out of the box</a></li>
+<li class="toctree-l1"><a class="reference internal" href="C2.html">On steroids: C&amp;C</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Credential-stuffing.html">On steroids: Credential stuffing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Create-botnet.html">On steroids: A botnet</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">On steroids: SEO poisoning</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">System</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../system/README.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../system/Gain-unauthorised-access.html">Gain unauthorised access</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../system/Escalate-basic-shell.html">Upgrade basic shell access to meterpreter/empire access</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../system/Maintain-windows.html">Maintaining access on Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../system/Maintain-macos.html">Maintaining access on macOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../system/Upload-exec.html">Upload and execute using empire</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../system/Backdoor-system.html">Backdoor a Windows system process with empire</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../system/PE-macOS.html">Privilege escalation on macOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../system/PE-windows.html">Privilege escalation on Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../system/PE-linux.html">Privilege escalation on Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../system/Pivoting.html">Pivoting using meterpreter autoroute</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Network</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../network/README.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../network/Sniffing.html">Sniffing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../network/ARP-spoofing.html">ARP spoofing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../network/Compromise-router.html">Compromise router</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../network/Attack-domestic-WiFi.html">Attack domestic WiFi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../network/IP-spoofing.html">IP spoofing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../network/DoS.html">Denial of Service (DoS)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../network/DDoS.html">Distributed Denial of Service (DDoS)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../network/DrDoS.html">Distributed Deflection Denial of Service (DrDoS)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../network/Hijack-network-session.html">Hijack session (network)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../network/Replay-attack.html">Replay attack</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../network/TCP-sequence-prediction-attack.html">TCP sequence prediction attack</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../network/Hijack-BGP.html">Hijack BGP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../network/DNS-spoofing.html">DNS spoofing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../network/DNS-attacks.html">DNS attacks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../network/SSL-BEAST.html">SSL Beast</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../network/SSL-hijacking.html">SSL Hijacking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../network/SSL-stripping.html">SSL Stripping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../network/HTTPS-spoofing.html">HTTPS spoofing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../network/MitM.html">Man-in-the-Middle (MitM)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../network/Port-redirection.html">Port redirection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../network/Virtual-host-confusion-attack.html">Virtual host confusion attack</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Crypto</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../crypto/README.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../crypto/Brute-force.html">Brute-force</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../crypto/Chosen-ciphertext-attack.html">Chosen ciphertext attack</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../crypto/Chosen-plaintext-attack.html">Chosen plaintext attack</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../crypto/Forgery-attack.html">Forgery attack</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../crypto/Group-impersonation-attack.html">Impersonation attack (Group message)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../crypto/Read-a-PGP-encrypted-message.html">Read a PGP encrypted message</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../crypto/Side-channel-attack.html">Side-channel attack</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../crypto/Unknown-key-share-attack.html">Unknown key share attack</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Troubleshooting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../trouble/README.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trouble/Beef.html">BeEF unable to load extensions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trouble/Bettercap.html">Bettercap starts with SSL strip disabled</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trouble/Empire.html">Empire cannot import name ‘Mapping’ from ‘collections’</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trouble/Python-27-EOL.html">Python 2.7 end of life problems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trouble/Veil.html">Veil Installation error Failed to run (wine) Python pip pefile… Exit code: 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trouble/Zlogger.html">Zlogger chokes on missing import _bootlocale</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Attack trees</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>On steroids: SEO poisoning</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/docs/social-engineering/SEO-poisoning.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="on-steroids-seo-poisoning">
+<h1>On steroids: SEO poisoning<a class="headerlink" href="#on-steroids-seo-poisoning" title="Permalink to this heading"></a></h1>
+<p>From research, what appears to be happening: The below search engine poisoning attack tree can be used for feature extraction.</p>
+<section id="attack-tree">
+<h2>Attack tree<a class="headerlink" href="#attack-tree" title="Permalink to this heading"></a></h2>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>1 Set up branching logic (usually PHP script) (AND)
+    1.1 Identify crawlers (OR)
+        1.1.1 Query IP of page request ($_SERVER[&#39;REMOTE_ADDR&#39;]) and compare against usual 
+        search engine IP ranges) (OR)
+        1.1.2 Check user-agent string ($_SERVER[&#39;HTTP_USER_AGENT&#39;]) to flag requests from 
+        crawlers that use identifying strings
+    1.2 Identify users 
+        1.2.1 Check referrer ($_SERVER[&#39;HTTP_REFERER&#39;]) against a list of strings used by 
+        search engines (OR)
+        1.2.2 Check the referrer URL for multiple occurrences of &amp; (field value pair delimiters)
+2 Get and select keywords and topical phrases (AND)
+    2.1 Fetch and select latest keywords from
+        2.1.1 C&amp;C server (less resilient) (OR)
+        2.1.2 Google Trends (OR)
+        2.1.3 Other sources
+    2.2 Optional: Log information about page requests received to monitor requests (for 
+    fine-tuning and improvements)
+        2.2.1 Keywords user arrived by
+        2.2.2 Timestamp
+        2.2.3 User agent string
+        2.2.4 Referrer string
+        2.2.5 IP from which page request is received
+    2.3 Download search engine results (AND)
+        2.3.1 PHP client URL library (OR)
+        2.3.2 cURL (OR)
+        2.3.3 fsockopen()
+    2.4 Extract meta content from the downloaded pages (using regular expressions) (AND)
+    2.5 Optional: Boost page ranking
+        2.5.1 Get links of other SEO pages
+            2.5.1.1 Same server
+            2.5.1.2 Related servers 
+        2.5.2 Intersperse extracted meta content with links to other SEO pages, random time/dates, 
+        images, video content
+3 Page generation (AND)
+    3.1 Same page for crawlers and users (OR)
+        3.1.1 Generate page
+        3.1.2 Redirect
+            3.1.2.1 Redirect by active content embedded in page (OR)
+            3.1.2.2 Only load additional active content in page if request is from a user 
+                3.1.2.2.1 JavaScript (OR)
+                3.1.2.2.2 ActionScript in embedded Flash (navigateToURL( new URLRequest(&quot;*yourpage*&quot;), &quot;_self&quot;);) (OR)
+                3.1.2.2.3 Another way of redirecting using active content 
+    3.2 Different pages for user and crawler
+        3.2.1 Generate SEO page for crawlers (AND)
+            3.2.1.1 Static HTML (OR)
+            3.2.1.2 Dynamic generation (OR)
+            3.2.1.3 SEO related sub-domains
+        3.2.2 Redirect users (a few times)
+            3.2.2.1 Server-side scripting with PHP header() (OR)
+            3.2.2.2 Apache HTTP Server mod_alias
+            3.2.2.3 Apache HTTP Server mod_rewrite (redirecting requests to a canonical domain name) (OR)
+            3.2.2.4 Nginx rewrite (OR)
+            3.2.2.5 Refresh Meta tag in document (add anchor in the “body” section for users whose browsers do not support this feature) (OR)
+            3.2.2.6 HTTP refresh header in a perl or python script (OR)
+            3.2.2.7 JavaScript (OR)
+            3.2.2.8 Another way of redirecting
+4 Landing page
+    4.1 Adult and pornographic websites (OR)
+    4.2 Internet services sites (advertising campaign) (OR)
+    4.3 Politics and religion (on a mission) (OR)
+    4.4 Exploit servers 
+        4.4.1 Redirection chain to a final landing page with malware payloads
+        4.4.2 Redirection to a MaaS (Malware-as-a-Service) platform which starts a redirection 
+        chain leading to final landing page
+</pre></div>
+</div>
+</section>
+<section id="notes">
+<h2>Notes<a class="headerlink" href="#notes" title="Permalink to this heading"></a></h2>
+<p>The phrase search engine optimization poisoning (SEO poisoning) is in use to describe one of two types of activities:</p>
+<ul class="simple">
+<li><p>Black hat SEO techniques used to achieve high search engine ranking, usually (but not only) to attack visitors. The techniques often involve content spamming, (all sorts of) link spamming, cloaking, doorway pages and redirection. These attacks often follow trending search terms. For example during natural disasters, when attackers attempt to have victims send monetary aid to fake accounts or during major political campaigns and other major world events. If its intent is malicious, the attacker aims to install malware such as trojans, attack the user’s machine, or trick the user into providing sensitive data (see attack tree).</p></li>
+<li><p>Exploiting typical web vulnerabilities on existing high-ranking web pages and using them to spread malware. If, for example, a high-ranking web page has a stored XSS vulnerability, the code may either directly attempt to spread malware or redirect the user to a different site (using redirection like used in black hat SEO).</p></li>
+</ul>
+<p>Any search engine software can expect the same search fraud problem as on the internet with similar impacts.</p>
+<ul class="simple">
+<li><p>Spam web pages will need to be weeded out from the index.</p></li>
+<li><p>Combating spam is intertwined with search engine poisoning as that attack uses SEO fraud techniques.</p></li>
+</ul>
+</section>
+<section id="cheatsheets">
+<h2>Cheatsheets<a class="headerlink" href="#cheatsheets" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://tymyrddin.github.io/cheatsheets/docs/payloads/redirecting.html" title="(in Cheatsheets)"><span class="xref myst">Redirecting</span></a></p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Create-botnet.html" class="btn btn-neutral float-left" title="On steroids: A botnet" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../system/README.html" class="btn btn-neutral float-right" title="Introduction" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+        <a href="https://unseen-uni.netlify.app/">Unseen University</a>, 2022, with many thanks to <a href="https://github.com/EONRaider">EONRaider</a> and <a href="https://zsecurity.org/">ZSecurity</a>.
+
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

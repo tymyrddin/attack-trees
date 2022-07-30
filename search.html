@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Search &mdash; Attack trees</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <script src="_static/searchtools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="#" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> Attack trees
+            <img src="_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="#" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Testlab</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="docs/lab/README.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/lab/Kali.html">Kali Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/lab/Windows.html">Windows PC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/lab/macOS.html">macOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/lab/Linux.html">Linux PC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/lab/Metasploitable.html">Metasploitable2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/lab/Webgoat.html">Goat and wolf</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reconnaissance</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="docs/reconnaissance/README.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/reconnaissance/Info-company-website.html">Gathering info about a company/website</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/reconnaissance/Info-person.html">Gathering info about a person</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/reconnaissance/Deep-dive-DNS.html">Gathering DNS information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/reconnaissance/Gather-app-information.html">Gathering application information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/reconnaissance/Discover-app-vulnerabilities.html">Discovering application vulnerabilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/reconnaissance/War-dialing-driving-flying-shipping.html">War-dialing-driving-flying-shipping</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Scanning</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="docs/scanning/README.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/scanning/Hosts-icmp.html">Host discovery with ICMP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/scanning/Hosts-tcp.html">Host discovery with TCP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/scanning/Hosts-udp.html">Host discovery with UDP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/scanning/Vulnerabilities.html">Discover vulnerabilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/scanning/Service-and-OS-detection.html">Service and OS detection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/scanning/Analysis.html">Diving deeper in discovery</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Enumeration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="docs/enumeration/README.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/enumeration/Network-enumeration.html">Network enumeration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/enumeration/Linux-enumeration.html">Linux enumeration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/enumeration/Windows-enumeration.html">Windows enumeration</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Database</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="docs/databases/README.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/databases/Access-password-database.html">Access password database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/databases/Crack-root.html">Cracking the database root password</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/databases/DB-exploits.html">Using known database exploits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/databases/SQLi.html">SQL injection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/databases/Confirm-injection-vuln.html">Confirm SQL injection vulnerability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/databases/SQLi-login.html">SQL injection login bypass</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/databases/SQLi-extract.html">Extracting data from the database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/databases/SQLi-outside.html">Read and write local files outside of www root</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/databases/SQLi-get-shell.html">Get shell and control target server</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/databases/Automated-exploitation.html">Automated exploitation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Application</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="docs/application/README.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/application/Mapping.html">Web application mapping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/application/File-upload.html">Exploit file upload vulnerabilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/application/Remote-code-execution.html">Exploit remote code execution vulnerabilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/application/Local-file-inclusion.html">Shell from local file inclusion vulnerabilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/application/Remote-file-inclusion.html">Shell from remote file inclusion vulnerabilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/application/XSS.html">Cross-site scripting (XSS)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/application/XSS-context.html">Discover XSS vulnerabilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/application/Hook-to-beef.html">Hooking targets to BeEF using XSS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/application/Cookies.html">Become admin by manipulating cookies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/application/Clickjacking.html">Clickjacking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/application/CSRF.html">Cross-Site Request Forgery (CSRF)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/application/Last-resort.html">Last resort: Brute force &amp; Dictionary attacks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/application/MitB.html">Man-in-the-Browser (MitB)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/application/Browser-based-attacks.html">Browser-based attacks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/application/ZAP.html">Zed Attack Proxy (ZAP)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/application/Post-exploitation.html">Post exploitation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Server</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="docs/server/README.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/server/Spoof-webserver.html">Spoof webserver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/server/Hijack-application-session.html">Hijack session (application)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/server/Escalate-reverse-shell.html">Escalate a reverse shell to a more powerful shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/server/Privilege-escalation-on-web-server.html">Privilege escalation on a web server</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">CI/CD pipeline</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="docs/cicd/README.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/cicd/Supply-chain.html">Poison open source supply chains</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Malware</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="docs/malware/README.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/malware/Create-malware.html">Creating malware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/malware/Malware-Windows.html">Windows malware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/malware/Keylogger.html">Keylogger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/malware/Password-recovery.html">Password recovery tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/malware/Modify-source.html">Modifying code to bypass AV</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/malware/Trojan-Windows.html">Simple Windows trojan</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/malware/Malware-macOS.html">macOS malware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/malware/Trojan-macOS.html">Simple macOS trojan</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/malware/Malware-Linux.html">Linux malware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/malware/Trojan-Linux.html">Simple Linux trojan</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/malware/Target-device.html">Run payload on target device</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Social engineering</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="docs/social-engineering/README.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/social-engineering/Mail-delivery.html">Mail delivery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/social-engineering/Fake-login.html">Steal access info with fake login page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/social-engineering/Beef-hook.html">Webpage with BeEF hook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/social-engineering/Phishing.html">Phishing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/social-engineering/Pharming.html">Pharming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/social-engineering/Analytics.html">Use analytics to lure a target</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/social-engineering/Fake-prompts.html">Fake prompts everywhere</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/social-engineering/Out-of-the-box.html">Getting out of the box</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/social-engineering/C2.html">On steroids: C&amp;C</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/social-engineering/Credential-stuffing.html">On steroids: Credential stuffing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/social-engineering/Create-botnet.html">On steroids: A botnet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/social-engineering/SEO-poisoning.html">On steroids: SEO poisoning</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">System</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="docs/system/README.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/system/Gain-unauthorised-access.html">Gain unauthorised access</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/system/Escalate-basic-shell.html">Upgrade basic shell access to meterpreter/empire access</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/system/Maintain-windows.html">Maintaining access on Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/system/Maintain-macos.html">Maintaining access on macOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/system/Upload-exec.html">Upload and execute using empire</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/system/Backdoor-system.html">Backdoor a Windows system process with empire</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/system/PE-macOS.html">Privilege escalation on macOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/system/PE-windows.html">Privilege escalation on Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/system/PE-linux.html">Privilege escalation on Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/system/Pivoting.html">Pivoting using meterpreter autoroute</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Network</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="docs/network/README.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/network/Sniffing.html">Sniffing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/network/ARP-spoofing.html">ARP spoofing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/network/Compromise-router.html">Compromise router</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/network/Attack-domestic-WiFi.html">Attack domestic WiFi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/network/IP-spoofing.html">IP spoofing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/network/DoS.html">Denial of Service (DoS)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/network/DDoS.html">Distributed Denial of Service (DDoS)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/network/DrDoS.html">Distributed Deflection Denial of Service (DrDoS)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/network/Hijack-network-session.html">Hijack session (network)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/network/Replay-attack.html">Replay attack</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/network/TCP-sequence-prediction-attack.html">TCP sequence prediction attack</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/network/Hijack-BGP.html">Hijack BGP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/network/DNS-spoofing.html">DNS spoofing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/network/DNS-attacks.html">DNS attacks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/network/SSL-BEAST.html">SSL Beast</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/network/SSL-hijacking.html">SSL Hijacking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/network/SSL-stripping.html">SSL Stripping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/network/HTTPS-spoofing.html">HTTPS spoofing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/network/MitM.html">Man-in-the-Middle (MitM)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/network/Port-redirection.html">Port redirection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/network/Virtual-host-confusion-attack.html">Virtual host confusion attack</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Crypto</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="docs/crypto/README.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/crypto/Brute-force.html">Brute-force</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/crypto/Chosen-ciphertext-attack.html">Chosen ciphertext attack</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/crypto/Chosen-plaintext-attack.html">Chosen plaintext attack</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/crypto/Forgery-attack.html">Forgery attack</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/crypto/Group-impersonation-attack.html">Impersonation attack (Group message)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/crypto/Read-a-PGP-encrypted-message.html">Read a PGP encrypted message</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/crypto/Side-channel-attack.html">Side-channel attack</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/crypto/Unknown-key-share-attack.html">Unknown key share attack</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Troubleshooting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="docs/trouble/README.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/trouble/Beef.html">BeEF unable to load extensions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/trouble/Bettercap.html">Bettercap starts with SSL strip disabled</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/trouble/Empire.html">Empire cannot import name ‘Mapping’ from ‘collections’</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/trouble/Python-27-EOL.html">Python 2.7 end of life problems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/trouble/Veil.html">Veil Installation error Failed to run (wine) Python pip pefile… Exit code: 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/trouble/Zlogger.html">Zlogger chokes on missing import _bootlocale</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Attack trees</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Search</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <noscript>
+  <div id="fallback" class="admonition warning">
+    <p class="last">
+      Please activate JavaScript to enable the search functionality.
+    </p>
+  </div>
+  </noscript>
+
+  
+  <div id="search-results">
+  
+  </div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+        <a href="https://unseen-uni.netlify.app/">Unseen University</a>, 2022, with many thanks to <a href="https://github.com/EONRaider">EONRaider</a> and <a href="https://zsecurity.org/">ZSecurity</a>.
+
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script>
+  <script>
+    jQuery(function() { Search.loadIndex("searchindex.js"); });
+  </script>
+  
+  <script id="searchindexloader"></script>
+   
+
+
+</body>
+</html>
